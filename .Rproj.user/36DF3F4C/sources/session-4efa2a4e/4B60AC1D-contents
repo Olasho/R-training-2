@@ -1,0 +1,112 @@
+---
+title: "Data Visualization, Manipulation, and R markdown"
+author: "HDRC DATA SCIENCE TEAM"
+date: "`r Sys.Date()`"
+output:
+  html_document: 
+    toc: true
+    css: ./style.css
+    highlight: zenburn
+---
+
+
+# Introduction
+The major objectives of this training wil be to;
+
+1.    Mastering ggplot2:
+      Understand the principles of data visualization with ggplot2.
+      Learn how to create various types of plots using ggplot2.
+      Explore advanced customization options for enhancing visualizations.
+
+2.    Exploring dplyr:
+      Gain proficiency in data manipulation tasks using dplyr.
+      Learn essential verbs for filtering, arranging, summarizing, and mutating data.
+      Understand the pipe operator (%>%) and its role in chaining dplyr functions.
+
+3.    Understanding R Operators:
+      Explore the different types of operators in R.
+      Learn how to use arithmetic, logical, comparison, and assignment operators effectively.
+      Understand the role of operators in data analysis and programming tasks.
+
+4.    Utilizing Rmarkdown:
+      Learn the basics of Rmarkdown and its advantages for reproducible research.
+      Explore how to integrate code, visualizations, and narrative text in Rmarkdown documents.
+      Understand how to generate various output formats from Rmarkdown, such as HTML, PDF, and Word.
+
+
+
+# Loading data into R
+
+**Project Setup:**
+
+Creating a project in R Studio allows us to encapsulate our work within a dedicated directory, facilitating organization and reproducibility. In the first training session, we were introduced on how to create a project. 
+
+  1   To create a new project, we navigate to the toolbar and select "File" -> "New Project" -> "New Directory" -> "New Project".
+
+  2   We then choose a suitable directory on our system where the project will be located and provide a name for the project.
+
+  3   Clicking "Create Project" initializes the project and sets the working directory to the project directory.
+
+**Confirming the Working Directory:**
+
+Verifying the working directory ensures that we are operating within the intended project environment. We use the **getwd()** function to retrieve the current working directory. Comparing the displayed directory path with the project directory confirms that we are in the correct workspace. When you create a project and reopen it at anytime, R specifies the working directory to that of the project. Any script you create within your project automatically takes the file path of the project. It is best to first check the current working directory you are in to be sure.
+
+```{r}
+getwd()
+```
+
+As we can see, we are within the working directory of the project. 
+
+**Creating Data Storage Folders:**
+
+Structuring our workspace with dedicated folders for datasets and scripts promotes organization and ease of access to files. We utilize R's dir.create() function to programmatically create the necessary folders within the project directory. By specifying the desired folder names and paths, we ensure consistent organization across projects.
+
+```{r}
+# creating the directory
+
+dir.create(path = "./datasets")
+
+# creating the directory
+
+dir.create(path = "./scripts")
+```
+
+**Verifying Folder Creation:**
+
+After executing the folder creation commands, we visually inspect the folder pane within R Studio to confirm that the new directories ('datasets' and 'scripts') have been successfully created. This visual verification ensures that the workspace is properly configured for subsequent data analysis tasks. We can also use the code below to verify the creation of our new folders:
+
+```{r}
+# checking the directory
+
+dir()
+```
+
+
+
+#   Creating graphs with ggplot2 package
+      Introduction to ggplot2 and its philosophy.
+      Understanding the grammar of graphics.
+      Exploring basic plotting functions in ggplot2.
+      Customizing plot aesthetics, including colors, themes, and annotations.
+      Creating complex plots, such as faceted plots, layered plots, and thematic maps.
+      Incorporating external data and custom geospatial information into ggplot2 visualizations.
+
+#   Manipulating data with dplyr:
+      Overview of the dplyr package and its role in data manipulation.
+      Understanding the key dplyr verbs: filter, arrange, select, mutate, summarise, and group_by.
+      Hands-on exercises for performing common data manipulation tasks using dplyr.
+      Exploring additional dplyr functions for advanced data manipulation tasks.
+      Using the pipe operator (%>%) to chain dplyr functions for streamlined workflows.
+      Handling missing data, reshaping data, and performing joins with dplyr.
+
+#   Using R operators
+      Overview of different types of operators in R.
+      Explanation of arithmetic, logical, comparison, and assignment operators.
+      Practical examples demonstrating the use of operators in data analysis and programming.
+
+#   Integration with Rmarkdown:
+      Introduction to Rmarkdown syntax and structure.
+      Hands-on exercises for creating Rmarkdown documents.
+      Customizing Rmarkdown output formats and styling options.
+      Understanding the importance of reproducibility in research.
+      Using Rmarkdown to create reproducible reports, manuscripts, and presentations.
